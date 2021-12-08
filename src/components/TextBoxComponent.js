@@ -1,3 +1,8 @@
-export default function TextBox({ image }) {
-    return <div>Text</div>;
-  }
+export default function TextBox({ gameStarted, textTitle }) {
+  return (
+    <>
+      {!gameStarted && <div className="welcomeText">{textTitle}</div>}
+      {gameStarted && <div className="questionText">Question 1</div>}
+    </>
+  );
+}

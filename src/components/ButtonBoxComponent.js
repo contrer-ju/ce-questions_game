@@ -6,13 +6,13 @@ export default function ButtonBox({
   return (
     <div>
       {!gameStarted && (
-        <span class="btn" onClick={() => setTrueGameStarted()}>
-          Start Game
+        <span className="btn" onClick={() => setTrueGameStarted()}>
+          Iniciar Juego
         </span>
       )}
       {gameStarted && (
-        <span class="btn" onClick={() => setFalseGameStarted()}>
-          Finish Game
+        <span className="btn" onClick={() => setFalseGameStarted()}>
+          Finalizar Juego
         </span>
       )}
     </div>

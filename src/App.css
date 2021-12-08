@@ -20,6 +20,12 @@
   border: 3px solid #f6c90e;
 }
 
+.alingCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .alingRight {
   align-self: flex-end;
   padding-right: 0.6rem;
@@ -46,14 +52,25 @@
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
 .btn:hover {
   color: #000;
   background-color: #eee;
   border-color: #eee;
 }
 
-@media (min-width: 420px) { 
-  .App { 
+.welcomeImage {
+  max-width: 90%;
+  height: auto;
+}
+
+.welcomeText {
+  font-weight: bold;
+  font-size: calc(27px + 2vmin);
+}
+
+@media (min-width: 420px) {
+  .App {
     width: 85vw;
     border: 4px solid #f6c90e;
   }
@@ -63,7 +80,7 @@
 }
 
 @media (min-width: 769px) {
-  .App { 
+  .App {
     width: 80vw;
     max-width: 1420px;
     border: 5px solid #f6c90e;
