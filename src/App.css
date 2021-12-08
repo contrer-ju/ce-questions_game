@@ -1,4 +1,4 @@
-.App {
+.Page {
   background-color: #252c33;
   min-height: 100vh;
   display: flex;
@@ -9,28 +9,66 @@
   color: #eee;
 }
 
-.Box {
+.App {
   background-color: #3a4750;
   height: 80vh;
   width: 90vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   border: 3px solid #f6c90e;
 }
 
+.alingRight {
+  align-self: flex-end;
+  padding-right: 0.6rem;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #eee;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid #eee;
+  padding: 0.375rem 0.75rem;
+  margin: 0.2rem 0.1rem;
+  font-size: calc(6px + 2vmin);
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn:hover {
+  color: #000;
+  background-color: #eee;
+  border-color: #eee;
+}
+
 @media (min-width: 420px) { 
-  .Box { 
+  .App { 
     width: 85vw;
     border: 4px solid #f6c90e;
+  }
+  .alingRight {
+    padding-right: 1rem;
   }
 }
 
 @media (min-width: 769px) {
-  .Box { 
+  .App { 
     width: 80vw;
     max-width: 1420px;
     border: 5px solid #f6c90e;
+  }
+  .alingRight {
+    padding-right: 1.6rem;
   }
 }
