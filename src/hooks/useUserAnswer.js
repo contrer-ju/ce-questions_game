@@ -38,6 +38,7 @@ const useUserAnswer = () => {
   };
 
   return {
+    answerArray,
     setUserAnswer,
     checkedRadioButtom,
     setUserAnswerInitialValues,
