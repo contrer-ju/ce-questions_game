@@ -2,6 +2,7 @@ export default function ButtonBox({
   gameStarted,
   setTrueGameStarted,
   setFalseGameStarted,
+  setCountDownInitialValues,
 }) {
   return (
     <div>
@@ -11,7 +12,13 @@ export default function ButtonBox({
         </span>
       )}
       {gameStarted && (
-        <span className="btn" onClick={() => setFalseGameStarted()}>
+        <span
+          className="btn"
+          onClick={() => {
+            setFalseGameStarted();
+            setCountDownInitialValues();
+          }}
+        >
           Finalizar Juego
         </span>
       )}
