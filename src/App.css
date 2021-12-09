@@ -37,6 +37,7 @@
 
 .buttomText {
   font-size: calc(6px + 2vmin) !important;
+  margin-top: 0.5em;
 }
 
 .welcomeImage {
@@ -81,6 +82,10 @@
 .optionsText {
   font-weight: bold !important;
   color: #f6c90e !important;
+}
+
+.widthPercentageBar {
+  width: 80%;
 }
 
 @media (min-width: 420px) {

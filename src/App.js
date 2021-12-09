@@ -36,7 +36,6 @@ function App() {
   const textTitle = triviaData["title"];
   const urlImage = triviaData["image"];
   const questionsList = triviaData["questions"];
-  //console.log(questionsList);
 
   useEffect(() => {
     if (gameStarted) {
@@ -85,8 +84,10 @@ function App() {
             }}
           />
         )}
-        {gameStarted && <MessagesBox />}
-        {gameStarted && <PercentageBar />}
+        {gameStarted && <MessagesBox {...{ seconds }} />}
+        {gameStarted && (
+          <PercentageBar {...{ questionCounter, questionsList }} />
+        )}
         <ButtonBox
           {...{
             gameStarted,
