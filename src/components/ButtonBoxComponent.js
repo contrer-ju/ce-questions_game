@@ -3,20 +3,22 @@ export default function ButtonBox({
   setTrueGameStarted,
   setFalseGameStarted,
   setCountDownInitialValues,
+  setUserAnswerInitialValues,
 }) {
   return (
     <div>
       {!gameStarted && (
-        <span className="btn" onClick={() => setTrueGameStarted()}>
+        <span className="btn btn-outline-light buttomText" onClick={() => setTrueGameStarted()}>
           Iniciar Juego
         </span>
       )}
       {gameStarted && (
         <span
-          className="btn"
+          className="btn btn-outline-light buttomText"
           onClick={() => {
             setFalseGameStarted();
             setCountDownInitialValues();
+            setUserAnswerInitialValues();
           }}
         >
           Finalizar Juego

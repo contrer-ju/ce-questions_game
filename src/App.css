@@ -35,32 +35,8 @@
   font-weight: bold;
 }
 
-.btn {
-  display: inline-block;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #eee;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  background-color: transparent;
-  border: 1px solid #eee;
-  padding: 0.375rem 0.75rem;
-  margin: 0.2rem 0.1rem;
-  font-size: calc(6px + 2vmin);
-  border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.btn:hover {
-  color: #000;
-  background-color: #eee;
-  border-color: #eee;
+.buttomText {
+  font-size: calc(6px + 2vmin) !important;
 }
 
 .welcomeImage {
@@ -71,6 +47,40 @@
 .welcomeText {
   font-weight: bold;
   font-size: calc(27px + 2vmin);
+}
+
+.questionGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 40% 60%;
+  grid-gap: 7px;
+}
+
+.questionOptionAling {
+  justify-self: center;
+  align-self: flex-start;
+}
+
+.questionImageAling {
+  justify-self: center;
+  align-self: center;
+}
+
+.questionImage {
+  width: auto;
+  height: 20vh;
+  border-radius: 10%;
+}
+
+.questionText {
+  font-weight: bold;
+  font-size: calc(21px + 2vmin);
+}
+
+.optionsText {
+  font-weight: bold !important;
+  color: #f6c90e !important;
 }
 
 @media (min-width: 420px) {
@@ -91,5 +101,15 @@
   }
   .alingRight {
     padding-right: 1.6rem;
+  }
+  .questionGrid {
+    grid-template-rows: auto;
+    grid-template-columns: 50% 50%;
+  }
+  .questionOptionAling {
+    align-self: center;
+  }
+  .questionImage {
+    height: 25vh;
   }
 }

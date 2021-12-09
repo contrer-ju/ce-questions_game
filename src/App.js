@@ -13,6 +13,7 @@ import ButtonBox from "./components/ButtonBoxComponent";
 
 import useGameStarted from "./hooks/useGameStarted";
 import useCountDownSeconds from "./hooks/useCountDownSeconds";
+import useUserAnswer from "./hooks/useUserAnswer";
 
 function App() {
   const { gameStarted, setTrueGameStarted, setFalseGameStarted } =
@@ -24,16 +25,27 @@ function App() {
     setCountDownReset,
     setCountDownInitialValues,
   } = useCountDownSeconds();
+  const {
+    setUserAnswer,
+    checkedRadioButtom,
+    setUserAnswerInitialValues,
+    setTrueSingleRadioButtom,
+    setFalseRadioButtoms,
+  } = useUserAnswer();
 
   const textTitle = triviaData["title"];
   const urlImage = triviaData["image"];
   const questionsList = triviaData["questions"];
+  //console.log(questionsList);
 
   useEffect(() => {
     if (gameStarted) {
       const interval = setInterval(() => {
         setCountDownStart();
-        if (seconds === 0) setCountDownReset();
+        if (seconds === 0) {
+          setCountDownReset();
+          setFalseRadioButtoms();
+        }
         if (questionCounter === questionsList.length && seconds === 0) {
           setFalseGameStarted();
           setCountDownInitialValues();
@@ -50,6 +62,7 @@ function App() {
     setCountDownReset,
     setCountDownStart,
     setFalseGameStarted,
+    setFalseRadioButtoms,
   ]);
 
   return (
@@ -57,8 +70,21 @@ function App() {
       <div className="App">
         {!gameStarted && <ImageBox image={urlImage} />}
         {gameStarted && <ClockBox seconds={seconds} />}
-        <TextBox {...{ gameStarted, textTitle }} />
-        {gameStarted && <OptionsBox {...{}} />}
+        <TextBox
+          {...{ gameStarted, textTitle, questionsList, questionCounter }}
+        />
+        {gameStarted && (
+          <OptionsBox
+            {...{
+              seconds,
+              questionsList,
+              questionCounter,
+              setUserAnswer,
+              checkedRadioButtom,
+              setTrueSingleRadioButtom,
+            }}
+          />
+        )}
         {gameStarted && <MessagesBox />}
         {gameStarted && <PercentageBar />}
         <ButtonBox
@@ -67,6 +93,7 @@ function App() {
             setTrueGameStarted,
             setFalseGameStarted,
             setCountDownInitialValues,
+            setUserAnswerInitialValues,
           }}
         />
         {/* To Do Finish & Result Game Component  */}
